@@ -1,5 +1,14 @@
 const express = require("express")
 let app = express()
+const mongoose = require("mongoose")
+
+
+mongoose.connect("mongodb+srv://glen-demo:TId7r1FphLDWMT5X@mern-demo.gltoh.mongodb.net/nodeExample?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log("Connected to the database"))
+.catch(() => console.log(`There was an error connecting to db`))
 
 // Middleware 
 app.use(express.json()) // Reading the body as JSON
