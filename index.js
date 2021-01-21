@@ -1,5 +1,7 @@
 const express = require("express")
+const cors = require("cors")
 let app = express()
+
 const mongoose = require("mongoose")
 
 
@@ -11,6 +13,7 @@ mongoose.connect("mongodb+srv://glen-demo:TId7r1FphLDWMT5X@mern-demo.gltoh.mongo
 .catch(() => console.log(`There was an error connecting to db`))
 
 // Middleware 
+app.use(cors())
 app.use(express.json()) // Reading the body as JSON
 
 // app.use(express.urlencoded()) // Reading the body as form-data
@@ -36,4 +39,4 @@ app.get("/", (request, response) => {
 })
 
 // port, callback
-app.listen(3000, () => {})
+app.listen(5000, () => {})
