@@ -39,4 +39,4 @@ app.get("/", (request, response) => {
 })
 
 // port, callback
-app.listen(5000, () => {})
+app.listen(process.env.PORT, () => {})
